@@ -177,3 +177,13 @@ footer p{margin-bottom:10px}
 .artcta{margin-top:40px;padding:26px;border-radius:8px;background:var(--sand);border-left:3px solid var(--gold)}.artcta p{font-family:var(--serif);font-size:22px;margin-bottom:14px;color:var(--navy)}
 
 .social{flex-wrap:wrap;gap:8px}.social a{width:34px;height:34px}
+
+/* v4: hero content, logo and cards share one left edge; picture limited to content width */
+.hero{width:auto;max-width:none;margin:0;border-radius:0;background:var(--navy)}
+.hero::before{inset:auto;top:0;bottom:0;left:max(0px,calc(50% - 566px));width:min(100%,1132px);z-index:1;border-radius:0 14px 14px 0;background:linear-gradient(90deg,var(--navy) 0%,rgba(10,20,40,.88) 30%,rgba(10,20,40,.35) 60%,rgba(10,20,40,.05) 100%)}
+.hero::after{content:"";position:absolute;top:0;bottom:0;left:max(0px,calc(50% - 566px));width:min(100%,1132px);z-index:0;border-radius:0 14px 14px 0;background:var(--bg) right center/cover no-repeat}
+.hero .wrap{z-index:2;max-width:1180px;margin:0 auto;padding:72px 24px}
+@media(max-width:1090px){.hero::before{border-radius:0;background:linear-gradient(180deg,rgba(10,20,40,.88),rgba(10,20,40,.72))}.hero::after{border-radius:0}}
+@media(max-width:620px){.hero{width:auto;margin:0}.hero .wrap{padding:48px 24px}}
+
+@media(min-width:1241px){.menu{gap:17px}.nav{gap:14px}}
